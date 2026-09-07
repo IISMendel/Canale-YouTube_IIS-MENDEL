@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playlist Video — IIS “Gregorio Mendel”</title>
+<meta name="description" content="I video dell'IIS Gregorio Mendel di Villa Cortese: corsi, laboratori, azienda agricola, progetti ed eventi.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#f5f5f5;color:#1a1a1a;display:flex;flex-direction:column;min-height:100vh}
+header{background:linear-gradient(135deg,#1b5e20,#123c16);color:#fff;box-shadow:0 6px 20px rgba(18,60,22,.18)}
+.wrap{max-width:1120px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;gap:16px}
+.logo{width:60px;height:60px;border-radius:999px;background:#fff;flex:0 0 auto;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:3px}
+.logo img{width:100%;height:100%;object-fit:contain}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:600;color:rgba(255,255,255,.82)}
+.htitle{font-size:22px;font-weight:700;line-height:1.2;margin-top:2px}
+.hero{background:#fff;border-bottom:1px solid #e2e8f0}
+.hero .inner{max-width:1120px;margin:0 auto;padding:56px 24px;text-align:center}
+.tag{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+h1{font-size:40px;line-height:1.15;font-weight:800;color:#123c16;margin:18px 0 14px}
+.lead{font-size:17px;line-height:1.7;color:#475569;max-width:640px;margin:0 auto}
+main{max-width:1120px;margin:0 auto;padding:40px 24px 56px;width:100%;flex:1 1 auto}
+.filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.chip{font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;border-radius:999px;cursor:pointer;transition:.15s;border:1px solid #c8e6c9;background:#fff;color:#1b5e20}
+.chip:hover{border-color:#4caf50}
+.chip.is-on{background:#2e7d32;color:#fff;border-color:#2e7d32}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(15,23,42,.05);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(18,60,22,.14)}
+.thumb{display:block;position:relative;background:#123c16}
+.thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.play::before{content:"";width:56px;height:56px;border-radius:999px;background:rgba(18,60,22,.82);position:absolute}
+.tri{position:relative;width:0;height:0;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:5px}
+.body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1 1 auto}
+.badge{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:5px 12px;border-radius:999px}
+.card h2{font-size:18px;line-height:1.3;font-weight:700;color:#123c16}
+.card p{font-size:14.5px;line-height:1.65;color:#475569;flex:1 1 auto}
+.btn{align-self:flex-start;display:inline-block;background:#2e7d32;color:#fff;font-size:14px;font-weight:700;text-decoration:none;padding:11px 22px;border-radius:10px;transition:background .15s}
+.btn:hover{background:#1b5e20}
+.cta{margin-top:48px;background:linear-gradient(135deg,#1b5e20,#123c16);border-radius:18px;padding:44px 32px;text-align:center;color:#fff}
+.cta h2{font-size:28px;font-weight:800;margin-bottom:12px}
+.cta p{font-size:16.5px;line-height:1.7;margin:0 auto 24px;max-width:560px;color:rgba(255,255,255,.92)}
+.cta a{display:inline-block;background:#fff;color:#123c16;font-size:15px;font-weight:700;text-decoration:none;padding:14px 30px;border-radius:999px;transition:background .15s}
+.cta a:hover{background:#e8f5e9}
+footer{background:#123c16;color:rgba(255,255,255,.8)}
+footer .inner{max-width:1120px;margin:0 auto;padding:34px 24px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+footer .name{color:#fff;font-weight:700;font-size:16px;margin-bottom:6px}
+footer .small{font-size:14px}
+footer a{display:inline-block;margin-top:8px;font-size:14px;color:#a5d6a7;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.credit{font-size:12.5px;color:rgba(255,255,255,.62);text-align:right}
+#top{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border:none;border-radius:999px;background:#2e7d32;color:#fff;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(18,60,22,.35);opacity:0;visibility:hidden;transition:.25s;z-index:50}
+#top.show{opacity:1;visibility:visible}
+#top:hover{background:#1b5e20}
+@media(max-width:640px){h1{font-size:30px}.hero .inner{padding:40px 20px}.htitle{font-size:18px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo"><img src="data:image/png;base64,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" alt="Logo IIS Gregorio Mendel"></div>
+    <div>
+      <div class="eyebrow">IIS Gregorio Mendel · Villa Cortese (MI)</div>
+      <div class="htitle">Canale YouTube della scuola</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <span class="tag">Playlist video</span>
+    <h1>Scopri la nostra scuola in video</h1>
+    <p class="lead">Una raccolta di video per conoscere i nostri spazi, i corsi, i laboratori, i progetti e gli eventi che caratterizzano l'IIS “Gregorio Mendel”.</p>
+  </div>
+</section>
+
+<main>
+  <div class="filters">
+    
+<button type="button" class="chip is-on" data-filter="Tutti">Tutti · 16</button>    <button type="button" class="chip" data-filter="Presentazione corsi">Presentazione corsi · 3</button>    <button type="button" class="chip" data-filter="Luoghi">Luoghi · 6</button>    <button type="button" class="chip" data-filter="Progetti">Progetti · 6</button>    <button type="button" class="chip" data-filter="Eventi">Eventi · 1</button>
+  </div>
+
+  <div class="grid" id="grid">
+      <article class="card" data-cat="Presentazione corsi">
+        <a class="thumb" href="https://youtu.be/vGOaoZhlfpw" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/vGOaoZhlfpw/hqdefault.jpg" alt="Video Presentazione Mendel 2026/2027" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#1b5e20">Presentazione corsi</span>
+          <h2>Video Presentazione Mendel 2026/2027</h2>
+          <p>La presentazione completa dell'istituto: i corsi, le opportunità formative e le caratteristiche che ci rendono unici.</p>
+          <a class="btn" href="https://youtu.be/vGOaoZhlfpw" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Presentazione corsi">
+        <a class="thumb" href="https://youtu.be/jnJQzoD9nrQ" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/jnJQzoD9nrQ/hqdefault.jpg" alt="Corso IDA (Serale)" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#1b5e20">Presentazione corsi</span>
+          <h2>Corso IDA (Serale)</h2>
+          <p>Le opportunità del corso serale per adulti: una seconda occasione per completare gli studi superiori.</p>
+          <a class="btn" href="https://youtu.be/jnJQzoD9nrQ" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Eventi">
+        <a class="thumb" href="https://youtube.com/shorts/D2lVyrUp-is" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/D2lVyrUp-is/hqdefault.jpg" alt="Festa dei diplomati" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#123c16">Eventi</span>
+          <h2>Festa dei diplomati</h2>
+          <p>Un momento di celebrazione per i nostri diplomati: la consegna dei diplomi e i festeggiamenti.</p>
+          <a class="btn" href="https://youtube.com/shorts/D2lVyrUp-is" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/aTvQbujJEjs" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/aTvQbujJEjs/hqdefault.jpg" alt="Progetto Parco ILA Legnano" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Progetto Parco ILA Legnano</h2>
+          <p>Il nostro contributo al Parco ILA di Legnano: valorizzazione del territorio e sostenibilità ambientale.</p>
+          <a class="btn" href="https://youtu.be/aTvQbujJEjs" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Luoghi">
+        <a class="thumb" href="https://youtu.be/WuPpK3J-CIU" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/WuPpK3J-CIU/hqdefault.jpg" alt="La nostra serra" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#2e7d32">Luoghi</span>
+          <h2>La nostra serra</h2>
+          <p>La serra dell'istituto: uno spazio dedicato alla coltivazione e alle attività pratiche degli studenti.</p>
+          <a class="btn" href="https://youtu.be/WuPpK3J-CIU" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/4YPf0jFbImU" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/4YPf0jFbImU/hqdefault.jpg" alt="A passi leggeri verso il futuro" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>A passi leggeri verso il futuro</h2>
+          <p>Un progetto che guarda al futuro della scuola, tra sostenibilità e innovazione.</p>
+          <a class="btn" href="https://youtu.be/4YPf0jFbImU" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Presentazione corsi">
+        <a class="thumb" href="https://youtu.be/lNcxCURgMAk" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/lNcxCURgMAk/hqdefault.jpg" alt="La nostra azienda agricola" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#1b5e20">Presentazione corsi</span>
+          <h2>La nostra azienda agricola</h2>
+          <p>L'azienda agricola della scuola: uno spazio in cui gli studenti fanno esperienza pratica sul campo.</p>
+          <a class="btn" href="https://youtu.be/lNcxCURgMAk" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/ESL8YF0eBiA" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/ESL8YF0eBiA/hqdefault.jpg" alt="Stage 2025" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Stage 2025</h2>
+          <p>L'esperienza di stage dei nostri studenti: un percorso di crescita personale e professionale.</p>
+          <a class="btn" href="https://youtu.be/ESL8YF0eBiA" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Luoghi">
+        <a class="thumb" href="https://youtu.be/xAileQkXvYE" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/xAileQkXvYE/hqdefault.jpg" alt="Aula TEAL e Multifunzionale" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#2e7d32">Luoghi</span>
+          <h2>Aula TEAL e Multifunzionale</h2>
+          <p>Le nostre aule innovative TEAL e multifunzionali, dotate di tecnologie per una didattica moderna.</p>
+          <a class="btn" href="https://youtu.be/xAileQkXvYE" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Luoghi">
+        <a class="thumb" href="https://youtu.be/o5fMujNezpQ" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/o5fMujNezpQ/hqdefault.jpg" alt="Il Bar del Mendel" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#2e7d32">Luoghi</span>
+          <h2>Il Bar del Mendel</h2>
+          <p>Il bar della scuola: uno spazio accogliente dove ritrovarsi durante le pause.</p>
+          <a class="btn" href="https://youtu.be/o5fMujNezpQ" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Luoghi">
+        <a class="thumb" href="https://youtu.be/ikmbBMP10Rw" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/ikmbBMP10Rw/hqdefault.jpg" alt="Aula Magna" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#2e7d32">Luoghi</span>
+          <h2>Aula Magna</h2>
+          <p>L'aula magna della scuola, dove si svolgono conferenze, eventi e cerimonie.</p>
+          <a class="btn" href="https://youtu.be/ikmbBMP10Rw" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Luoghi">
+        <a class="thumb" href="https://youtu.be/puPQGuvNm7c" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/puPQGuvNm7c/hqdefault.jpg" alt="Lab di Biologia e Biotecnologie" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#2e7d32">Luoghi</span>
+          <h2>Lab di Biologia e Biotecnologie</h2>
+          <p>Il laboratorio di biologia e biotecnologie, attrezzato con moderne strumentazioni scientifiche.</p>
+          <a class="btn" href="https://youtu.be/puPQGuvNm7c" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Luoghi">
+        <a class="thumb" href="https://youtu.be/qfENZaXNZ9M" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/qfENZaXNZ9M/hqdefault.jpg" alt="Laboratorio Trasformazione dei Prodotti" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#2e7d32">Luoghi</span>
+          <h2>Laboratorio Trasformazione dei Prodotti</h2>
+          <p>Dalla teoria alla pratica: il laboratorio in cui gli studenti lavorano con i prodotti dell'azienda agricola.</p>
+          <a class="btn" href="https://youtu.be/qfENZaXNZ9M" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/HX7owlqwdhI" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/HX7owlqwdhI/hqdefault.jpg" alt="Stage in Irlanda" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Stage in Irlanda</h2>
+          <p>L'esperienza internazionale dei nostri studenti in Irlanda, tra lingua, lavoro e cultura.</p>
+          <a class="btn" href="https://youtu.be/HX7owlqwdhI" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/5p90jwKqqlM" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/5p90jwKqqlM/hqdefault.jpg" alt="Internazionalizzazione: Utah State University e IIS Mendel" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Internazionalizzazione: Utah State University e IIS Mendel</h2>
+          <p>Il progetto di collaborazione internazionale tra il nostro istituto e la Utah State University.</p>
+          <a class="btn" href="https://youtu.be/5p90jwKqqlM" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/jPfd5IVOizE" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/jPfd5IVOizE/hqdefault.jpg" alt="Mendel 4.0 — Trattrice Landini" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Mendel 4.0 — Trattrice Landini</h2>
+          <p>L'innovazione in agricoltura: le tecnologie avanzate applicate al settore agrario.</p>
+          <a class="btn" href="https://youtu.be/jPfd5IVOizE" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+  </div>
+
+  <div class="cta">
+    <h2>Vieni a trovarci!</h2>
+    <p>Questi video ti hanno incuriosito? Vieni a scoprire di persona la nostra scuola, i laboratori e l'azienda agricola.</p>
+    <a href="https://www.youtube.com/channel/UCfGZOWObWW_iLq1F0uPYNOQ" target="_blank" rel="noopener">Vai al canale YouTube</a>
+  </div>
+</main>
+
+<footer>
+  <div class="inner">
+    <div>
+      <div class="name">Istituto di Istruzione Superiore “Gregorio Mendel”</div>
+      <div class="small">Via Ferrazzi, 15 — 20035 Villa Cortese (MI)</div>
+      <a href="https://agrariomendel.edu.it/" target="_blank" rel="noopener">agrariomendel.edu.it</a>
+    </div>
+    <div class="credit">Team Digitale — IIS “Gregorio Mendel”</div>
+  </div>
+</footer>
+
+<button id="top" aria-label="Torna su" title="Torna su">↑</button>
+
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click', function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('is-on');});
+    c.classList.add('is-on');
+    var f = c.dataset.filter;
+    document.querySelectorAll('.card').forEach(function(card){
+      card.style.display = (f === 'Tutti' || card.dataset.cat === f) ? '' : 'none';
+    });
+  });
+});
+var top_ = document.getElementById('top');
+window.addEventListener('scroll', function(){
+  top_.classList.toggle('show', window.scrollY > 400);
+});
+top_.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+</script>
+
+</body>
+</html>
