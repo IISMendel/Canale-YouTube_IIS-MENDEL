@@ -25,19 +25,24 @@ main{max-width:1120px;margin:0 auto;padding:40px 24px 56px;width:100%;flex:1 1 a
 .chip:hover{border-color:#4caf50}
 .chip.is-on{background:#2e7d32;color:#fff;border-color:#2e7d32}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(15,23,42,.05);transition:transform .18s,box-shadow .18s}
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(18,60,22,.14)}
-.thumb{display:block;position:relative;background:#123c16}
-.thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(15,23,42,.05);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(18,60,22,.20);border-color:#a5d6a7}
+.thumb{display:block;position:relative;background:#123c16;overflow:hidden}
+.thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s ease,filter .3s ease}
+.card:hover .thumb img{transform:scale(1.07);filter:brightness(.82)}
 .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.play::before{content:"";width:56px;height:56px;border-radius:999px;background:rgba(18,60,22,.82);position:absolute}
-.tri{position:relative;width:0;height:0;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:5px}
+.play::before{content:"";width:56px;height:56px;border-radius:999px;background:rgba(18,60,22,.82);position:absolute;transition:background .25s ease,transform .25s ease,box-shadow .25s ease}
+.card:hover .play::before{background:#FF0000;transform:scale(1.16);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.tri{position:relative;width:0;height:0;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:5px;transition:transform .25s ease}
+.card:hover .tri{transform:scale(1.12)}
 .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1 1 auto}
 .badge{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:5px 12px;border-radius:999px}
-.card h2{font-size:18px;line-height:1.3;font-weight:700;color:#123c16}
+.card h2{font-size:18px;line-height:1.3;font-weight:700;color:#123c16;transition:color .2s ease}
+.card:hover h2{color:#2e7d32}
 .card p{font-size:14.5px;line-height:1.65;color:#475569;flex:1 1 auto}
-.btn{align-self:flex-start;display:inline-block;background:#2e7d32;color:#fff;font-size:14px;font-weight:700;text-decoration:none;padding:11px 22px;border-radius:10px;transition:background .15s}
-.btn:hover{background:#1b5e20}
+.btn{align-self:flex-start;display:inline-block;background:#2e7d32;color:#fff;font-size:14px;font-weight:700;text-decoration:none;padding:11px 22px;border-radius:10px;transition:background .18s ease,box-shadow .18s ease,transform .18s ease}
+.card:hover .btn{background:#1b5e20;box-shadow:0 5px 14px rgba(27,94,32,.34)}
+.btn:hover{background:#123c16;transform:translateX(3px)}
 .cta{margin-top:48px;background:linear-gradient(135deg,#1b5e20,#123c16);border-radius:18px;padding:44px 32px;text-align:center;color:#fff}
 .cta h2{font-size:28px;font-weight:800;margin-bottom:12px}
 .cta p{font-size:16.5px;line-height:1.7;margin:0 auto 24px;max-width:560px;color:rgba(255,255,255,.92)}
@@ -79,7 +84,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 <main>
   <div class="filters">
     
-<button type="button" class="chip is-on" data-filter="Tutti">Tutti · 16</button>    <button type="button" class="chip" data-filter="Presentazione corsi">Presentazione corsi · 3</button>    <button type="button" class="chip" data-filter="Luoghi">Luoghi · 6</button>    <button type="button" class="chip" data-filter="Progetti">Progetti · 6</button>    <button type="button" class="chip" data-filter="Eventi">Eventi · 1</button>
+<button type="button" class="chip is-on" data-filter="Tutti">Tutti · 20</button>    <button type="button" class="chip" data-filter="Presentazione corsi">Presentazione corsi · 3</button>    <button type="button" class="chip" data-filter="Luoghi">Luoghi · 6</button>    <button type="button" class="chip" data-filter="Progetti">Progetti · 9</button>    <button type="button" class="chip" data-filter="Eventi">Eventi · 2</button>
   </div>
 
   <div class="grid" id="grid">
@@ -273,6 +278,54 @@ footer a:hover{color:#fff;text-decoration:underline}
           <h2>Mendel 4.0 — Trattrice Landini</h2>
           <p>L'innovazione in agricoltura: le tecnologie avanzate applicate al settore agrario.</p>
           <a class="btn" href="https://youtu.be/jPfd5IVOizE" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/CgwcAK4UE5M" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/CgwcAK4UE5M/hqdefault.jpg" alt="Catalogo Prodotti 2025 IIS Mendel" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Catalogo Prodotti 2025 IIS Mendel</h2>
+          <p>I prodotti dell'azienda agricola della scuola: dalla coltivazione alla trasformazione, il frutto del lavoro dei nostri studenti.</p>
+          <a class="btn" href="https://youtu.be/CgwcAK4UE5M" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Eventi">
+        <a class="thumb" href="https://youtu.be/WU5IQjiPfqw" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/WU5IQjiPfqw/hqdefault.jpg" alt="25 novembre — Giornata internazionale contro la violenza sulle donne" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#123c16">Eventi</span>
+          <h2>25 novembre — Giornata internazionale contro la violenza sulle donne</h2>
+          <p>Il contributo della scuola alla Giornata internazionale per l'eliminazione della violenza contro le donne.</p>
+          <a class="btn" href="https://youtu.be/WU5IQjiPfqw" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/3msUVnWOn7o" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/3msUVnWOn7o/hqdefault.jpg" alt="Lombardy and Utah — Extended Version (Progetto UTAH)" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Lombardy and Utah — Extended Version (Progetto UTAH)</h2>
+          <p>La versione estesa del video dedicato allo scambio tra la Lombardia e lo Utah, nell'ambito della collaborazione con la Utah State University.</p>
+          <a class="btn" href="https://youtu.be/3msUVnWOn7o" target="_blank" rel="noopener">Guarda il video →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Progetti">
+        <a class="thumb" href="https://youtu.be/jPWyLCAilh0" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/jPWyLCAilh0/hqdefault.jpg" alt="Korean Italian Exchange" loading="lazy">
+          <span class="play"><span class="tri"></span></span>
+        </a>
+        <div class="body">
+          <span class="badge" style="background:#388e3c">Progetti</span>
+          <h2>Korean Italian Exchange</h2>
+          <p>Lo scambio interculturale tra i nostri studenti e la Corea: lingue, tradizioni ed esperienze a confronto.</p>
+          <a class="btn" href="https://youtu.be/jPWyLCAilh0" target="_blank" rel="noopener">Guarda il video →</a>
         </div>
       </article>
   </div>
